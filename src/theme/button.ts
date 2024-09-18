@@ -132,7 +132,7 @@ const destructive = defineStyle({
   color: 'brand.lightGraySecondary',
   border: '1.2px solid transparent',
   _hover: {
-    bg: 'brand.lightGraySecondary',
+    bg: 'transparent',
     color: 'brand.red',
     borderWidth: '1.2px',
     borderColor: 'brand.red',
