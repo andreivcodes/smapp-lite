@@ -19,6 +19,7 @@ import WelcomeWrapper from './screens/welcome/WelcomeWrapper';
 import useWallet from './store/useWallet';
 import Fonts from './theme/Fonts';
 import theme from './theme';
+import ThemeTest from './screens/ThemeTest';
 
 function App(): JSX.Element {
   const { hasWallet, isWalletUnlocked } = useWallet();
@@ -100,6 +101,10 @@ function App(): JSX.Element {
         }
         return null;
       },
+    },
+    {
+      path: '/theme',
+      element: <ThemeTest />,
     },
   ]);
 
