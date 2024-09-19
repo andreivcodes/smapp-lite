@@ -55,7 +55,7 @@ const secondary = defineStyle({
     color: 'brand.darkGreen',
     _disabled: disabledStyle,
     _hover: {
-      bg: 'brand.darkGreen',
+      bg: 'transparent',
       color: 'brand.lightGraySecondary',
       borderWidth: '1.2px',
       borderColor: 'brand.lightGraySecondary',
