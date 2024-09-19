@@ -14,13 +14,18 @@ const baseStyle = definePartsStyle({
     pb: [6, 16],
   },
   dialog: {
-    color: 'brand.lightGray',
-    paddingX: [2, 6],
-    paddingTop: [6, 8],
-    paddingBottom: [4, 6],
-    marginX: 2,
-    borderRadius: '2xl',
-    bg: 'brand.modalGreen',
+    paddingX: '30px',
+    paddingTop: '50px',
+    paddingBottom: '54px',
+    borderRadius: '20px',
+    boxShadow: '0px 4px 6px 0px #21252940',
+    color: 'brand.darkGreen',
+    bg: 'brand.lightGraySecondary',
+    _dark: {
+      boxShadow: '0px 4px 6px 0px #21252940',
+      color: 'brand.lightGraySecondary',
+      bg: 'brand.darkGreenSecondary',
+    },
   },
 });
 

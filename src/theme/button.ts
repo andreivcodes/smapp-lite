@@ -40,7 +40,8 @@ const secondary = defineStyle({
   ...baseStyle,
   bg: 'brand.darkGreen',
   color: 'brand.lightGraySecondary',
-  border: '1.2px solid transparent',
+  borderWidth: '1.2px',
+  borderColor: 'brand.darkGreen',
   _disabled: disabledStyle,
   _hover: {
     bg: 'brand.lightGraySecondary',
