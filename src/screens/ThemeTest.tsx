@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDownIcon } from '@chakra-ui/icons';
+import { CheckIcon, ChevronDownIcon } from '@chakra-ui/icons';
 import {
   Button,
   Checkbox,
@@ -34,6 +34,11 @@ import {
   ModalHeader,
   ModalOverlay,
   useDisclosure,
+  Input,
+  InputGroup,
+  InputLeftAddon,
+  InputLeftElement,
+  InputRightElement,
 } from '@chakra-ui/react';
 
 function ThemeTest(): JSX.Element {
@@ -57,6 +62,7 @@ function ComponentAccordion(): JSX.Element {
     { title: 'Tabs', content: <TabsTest /> },
     { title: 'Menu', content: <MenuTest /> },
     { title: 'Modal', content: <ModalTest /> },
+    { title: 'Input', content: <Inputs /> },
   ];
 
   return (
@@ -73,6 +79,25 @@ function ComponentAccordion(): JSX.Element {
         </AccordionItem>
       ))}
     </Accordion>
+  );
+}
+
+function Inputs(): JSX.Element {
+  return (
+    <Flex direction="row" gap={2} flexWrap="wrap">
+      <Input />
+      <Input placeholder="with placeholder" />
+      <InputGroup>
+        <InputLeftAddon>+234</InputLeftAddon>
+        <Input type="tel" placeholder="phone number" />
+      </InputGroup>
+
+      <Input isDisabled />
+      <Input isDisabled placeholder="Here is a disabled placeholder" />
+
+      <Input isInvalid />
+      <Input isInvalid placeholder="Here is a invlid placeholder" />
+    </Flex>
   );
 }
 
