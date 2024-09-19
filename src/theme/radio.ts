@@ -6,35 +6,41 @@ const { definePartsStyle, defineMultiStyleConfig } =
 
 const baseStyle = definePartsStyle({
   control: {
+    width: '18px',
+    height: '18px',
     borderRadius: 'full',
-    borderWidth: '2px',
+    borderWidth: '1px',
     borderStyle: 'solid',
-    borderColor: 'brand.green',
-    background: 'brand.lightGray',
-
-    _checked: {
-      borderColor: 'brand.green',
-      background: 'brand.lightGray',
-      color: 'black',
-
-      _focus: {
-        borderColor: 'brand.green',
-        background: 'brand.lightGray',
-        boxShadow: 'none',
-      },
-
+    borderColor: 'brand.darkGreen',
+    background: 'white',
+    _disabled: {
+      background: 'brand.gray',
+      borderColor: 'brand.darkGray',
       _hover: {
-        borderColor: 'brand.green',
-        background: 'brand.lightGray',
+        background: 'brand.gray',
+        borderColor: 'brand.darkGray',
+      },
+    },
+    _checked: {
+      borderColor: 'brand.darkGreen',
+      background: 'white',
+      color: 'brand.darkGreen',
+      _focus: {
+        boxShadow: 'outline',
+      },
+      _hover: {
+        borderColor: 'brand.darkGreen',
+        background: 'white',
       },
     },
     _focus: {
-      borderColor: 'brand.green',
-      background: 'brand.lightGray',
-      boxShadow: 'none',
+      boxShadow: 'outline',
     },
   },
 });
 
-const radioTheme = defineMultiStyleConfig({ baseStyle });
+const radioTheme = defineMultiStyleConfig({
+  baseStyle,
+});
+
 export default radioTheme;

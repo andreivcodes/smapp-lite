@@ -5,15 +5,39 @@ const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(tabsAnatomy.keys);
 
 const baseStyle = definePartsStyle({
-  tab: {
-    fontWeight: 'semibold',
+  tablist: {
+    color: 'brand.darkGray',
     _selected: {
-      color: 'brand.green',
+      color: 'brand.darkGreen',
+    },
+    _dark: {
+      color: 'brand.lightGraySecondary',
+      _selected: {
+        color: 'brand.green',
+      },
     },
   },
-  tablist: {
-    borderBottom: '2x solid',
-    borderColor: 'inherit',
+  tab: {
+    fontFamily: 'Univers65',
+
+    fontSize: '18px',
+    borderBottom: '2px solid',
+
+    color: 'brand.darkGray',
+    borderColor: 'brand.darkGray',
+    _selected: {
+      color: 'brand.darkGreen',
+      borderColor: 'brand.darkGreen',
+    },
+
+    _dark: {
+      color: 'brand.lightGraySecondary',
+      borderColor: 'brand.lightGraySecondary',
+      _selected: {
+        color: 'brand.green',
+        borderColor: 'brand.green',
+      },
+    },
   },
 });
 

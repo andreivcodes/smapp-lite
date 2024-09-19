@@ -6,15 +6,48 @@ const { definePartsStyle, defineMultiStyleConfig } =
 
 const baseStyle = definePartsStyle({
   control: {
-    border: '1px',
-    padding: 1,
-    _checked: {
-      bg: 'brand.lightGray',
+    width: '18px',
+    height: '18px',
+    boxSizing: 'border-box',
+    borderRadius: '40px',
+    borderWidth: '1px',
+    bg: 'brand.lightGraySecondary',
+    borderColor: 'brand.darkGreen',
+    _hover: {
       borderColor: 'brand.darkGreen',
     },
-    iconColor: 'brand.green',
-    bg: 'brand.lightGray',
-    borderColor: 'brand.darkGreen',
+    _checked: {
+      bg: 'brand.darkGreen',
+      borderColor: 'brand.darkGreen',
+      _hover: {
+        bg: 'brand.darkGreen',
+        borderColor: 'brand.darkGreen',
+      },
+    },
+    _disabled: {
+      bg: 'brand.gray',
+      borderColor: 'brand.darkGray',
+      _hover: {
+        borderColor: 'brand.darkGray',
+      },
+      _checked: {
+        bg: 'brand.gray',
+        borderColor: 'brand.darkGray',
+      },
+    },
+    _dark: {
+      _checked: {
+        borderColor: 'brand.gray',
+      },
+    },
+  },
+
+  icon: {
+    color: 'white',
+    height: '6px',
+    _disabled: {
+      color: 'brand.darkGray',
+    },
   },
 });
 
