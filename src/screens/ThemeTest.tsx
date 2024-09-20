@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckIcon, ChevronDownIcon } from '@chakra-ui/icons';
+import { CheckIcon, ChevronDownIcon, ArrowDownIcon } from '@chakra-ui/icons';
 import {
   Button,
   Checkbox,
@@ -39,6 +39,14 @@ import {
   InputLeftAddon,
   InputLeftElement,
   InputRightElement,
+  Select,
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
 } from '@chakra-ui/react';
 
 function ThemeTest(): JSX.Element {
@@ -63,6 +71,8 @@ function ComponentAccordion(): JSX.Element {
     { title: 'Menu', content: <MenuTest /> },
     { title: 'Modal', content: <ModalTest /> },
     { title: 'Input', content: <Inputs /> },
+    { title: 'Select', content: <Selects /> },
+    { title: 'Drawer', content: <DrawerTest /> },
   ];
 
   return (
@@ -79,6 +89,54 @@ function ComponentAccordion(): JSX.Element {
         </AccordionItem>
       ))}
     </Accordion>
+  );
+}
+
+function DrawerTest(): JSX.Element {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  return (
+    <>
+      <Button colorScheme="teal" onClick={onOpen}>
+        Open
+      </Button>
+      <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>Create your account</DrawerHeader>
+
+          <DrawerBody>
+            <Flex flexDir="column" gap={4}>
+              <Input placeholder="Type here..." />
+              <Divider />
+              <Select placeholder="Select" />
+            </Flex>
+          </DrawerBody>
+
+          <DrawerFooter>
+            <Button variant="outline" mr={3} onClick={onClose}>
+              Cancel
+            </Button>
+            <Button colorScheme="blue">Save</Button>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+    </>
+  );
+}
+
+function Selects(): JSX.Element {
+  return (
+    <Flex direction="row" gap={2} flexWrap="wrap">
+      <Select placeholder="Select option">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+      </Select>
+      <Select icon={<ArrowDownIcon />} placeholder="Woohoo! A new icon" />
+      <Select placeholder="Disabled" isDisabled />
+    </Flex>
   );
 }
 

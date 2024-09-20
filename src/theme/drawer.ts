@@ -10,7 +10,10 @@ const baseStyle = definePartsStyle({
   },
   dialog: {
     borderRadius: 'none',
-    bg: `brand.modalGreen`,
+    bg: `brand.lightGraySecondary`,
+    _dark: {
+      bg: `brand.darkGreenSecondary`,
+    },
   },
   body: {
     overflowY: 'auto',

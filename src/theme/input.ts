@@ -36,7 +36,7 @@ const baseStyle = definePartsStyle({
     _dark: {
       borderColor: 'brand.lightGraySecondary',
       color: 'brand.lightGraySecondary',
-      bg: 'brand.darkGreen',
+      bg: 'transparent',
     },
     _hover: {
       borderColor: 'brand.darkGreen',
