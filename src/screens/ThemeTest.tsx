@@ -47,6 +47,7 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
+  Textarea,
 } from '@chakra-ui/react';
 
 function ThemeTest(): JSX.Element {
@@ -155,6 +156,11 @@ function Inputs(): JSX.Element {
 
       <Input isInvalid />
       <Input isInvalid placeholder="Here is a invlid placeholder" />
+
+      <Textarea />
+      <Textarea placeholder="Here is a sample placeholder" />
+      <Textarea placeholder="disabled" isDisabled />
+      <Textarea placeholder="invalid" isInvalid />
     </Flex>
   );
 }

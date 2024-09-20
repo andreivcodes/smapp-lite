@@ -11,6 +11,7 @@ import modalTheme from './theme/modal';
 import radioTheme from './theme/radio';
 import selectTheme from './theme/select';
 import tabsTheme from './theme/tabs';
+import textareaTheme from './theme/textarea';
 
 const config: ThemeConfig = {
   initialColorMode: 'dark',
@@ -49,6 +50,7 @@ const components = {
   Checkbox: checkboxTheme,
   Radio: radioTheme,
   Input: inputTheme,
+  Textarea: textareaTheme,
   Select: selectTheme,
 };
 const theme = extendTheme({ config, colors, components, styles });
