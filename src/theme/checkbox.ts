@@ -19,6 +19,7 @@ const baseStyle = definePartsStyle({
     _checked: {
       bg: 'brand.darkGreen',
       borderColor: 'brand.darkGreen',
+      color: 'white',
       _hover: {
         bg: 'brand.darkGreen',
         borderColor: 'brand.darkGreen',
@@ -27,12 +28,14 @@ const baseStyle = definePartsStyle({
     _disabled: {
       bg: 'brand.gray',
       borderColor: 'brand.darkGray',
+      color: 'brand.darkGray',
       _hover: {
         borderColor: 'brand.darkGray',
       },
       _checked: {
         bg: 'brand.gray',
         borderColor: 'brand.darkGray',
+        color: 'brand.darkGray',
       },
     },
     _dark: {
@@ -43,11 +46,8 @@ const baseStyle = definePartsStyle({
   },
 
   icon: {
-    color: 'white',
-    height: '6px',
-    _disabled: {
-      color: 'brand.darkGray',
-    },
+    color: 'inherit',
+    height: '8px',
   },
 });
 

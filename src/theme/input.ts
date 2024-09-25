@@ -8,24 +8,26 @@ const baseStyle = definePartsStyle({
   addon: {
     borderRadius: 'full',
     borderColor: 'brand.darkGreen',
-    borderWidth: '1px',
     bg: 'brand.lightGraySecondary',
     _dark: {
       borderColor: 'brand.lightGraySecondary',
       color: 'brand.lightGraySecondary',
-      bg: 'brand.darkGreenSecondary',
+      bg: 'transparent',
     },
+  },
+  element: {
+    p: 2.5,
   },
   field: {
     borderRadius: 'full',
     px: 4,
-    borderWidth: '1px',
     borderColor: 'brand.darkGreen',
     color: 'brand.darkGreen',
     bg: 'brand.lightGraySecondary',
     transition: 'all 0.2s',
     _placeholder: { color: 'brand.darkGray' },
     _disabled: {
+      opacity: 1,
       color: 'brand.darkGray',
       borderColor: 'brand.darkGray',
       _dark: {
@@ -41,6 +43,7 @@ const baseStyle = definePartsStyle({
     _hover: {
       borderColor: 'brand.darkGreen',
       _disabled: {
+        opacity: 1,
         color: 'brand.darkGray',
         borderColor: 'brand.darkGray',
         _dark: {

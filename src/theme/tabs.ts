@@ -5,25 +5,11 @@ const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(tabsAnatomy.keys);
 
 const baseStyle = definePartsStyle({
-  tablist: {
-    color: 'brand.darkGray',
-    _selected: {
-      color: 'brand.darkGreen',
-    },
-    _dark: {
-      color: 'brand.lightGraySecondary',
-      _selected: {
-        color: 'brand.green',
-      },
-    },
-  },
   tab: {
     fontFamily: 'Univers65',
-
     fontSize: '18px',
-    borderBottom: '2px solid',
-
     color: 'brand.darkGray',
+    borderBottomWidth: '2px',
     borderColor: 'brand.darkGray',
     _selected: {
       color: 'brand.darkGreen',
@@ -39,7 +25,21 @@ const baseStyle = definePartsStyle({
       },
     },
   },
+  tablist: {
+    color: 'brand.darkGray',
+    borderColor: 'transparent',
+
+    _selected: {
+      color: 'brand.darkGreen',
+    },
+    _dark: {
+      color: 'brand.lightGraySecondary',
+      _selected: {
+        color: 'brand.green',
+      },
+    },
+  },
 });
 
-const tabsTheme = defineMultiStyleConfig({ baseStyle });
+const tabsTheme = defineMultiStyleConfig({ variants: { line: baseStyle } });
 export default tabsTheme;

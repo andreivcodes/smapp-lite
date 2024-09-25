@@ -10,6 +10,7 @@ import menuTheme from './theme/menu';
 import modalTheme from './theme/modal';
 import radioTheme from './theme/radio';
 import selectTheme from './theme/select';
+import switchTheme from './theme/switch';
 import tabsTheme from './theme/tabs';
 import textareaTheme from './theme/textarea';
 
@@ -52,6 +53,7 @@ const components = {
   Input: inputTheme,
   Textarea: textareaTheme,
   Select: selectTheme,
+  Switch: switchTheme,
 };
 const theme = extendTheme({ config, colors, components, styles });
 

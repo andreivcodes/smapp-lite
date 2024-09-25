@@ -8,8 +8,13 @@ const baseStyle = definePartsStyle({
   overlay: {
     bg: 'blackAlpha.400',
   },
+  closeButton: {
+    borderRadius: 'full',
+  },
   dialog: {
     borderRadius: 'none',
+    pt: 10,
+    px: 4,
     bg: `brand.lightGraySecondary`,
     _dark: {
       bg: `brand.darkGreenSecondary`,

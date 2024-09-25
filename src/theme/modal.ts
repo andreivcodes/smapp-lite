@@ -13,6 +13,9 @@ const baseStyle = definePartsStyle({
     pt: 16,
     pb: [6, 16],
   },
+  closeButton: {
+    borderRadius: 'full',
+  },
   dialog: {
     paddingX: '30px',
     paddingTop: '50px',

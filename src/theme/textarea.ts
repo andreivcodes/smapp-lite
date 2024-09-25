@@ -10,6 +10,7 @@ const baseStyle = defineStyle({
   transition: 'all 0.2s',
   _placeholder: { color: 'brand.darkGray' },
   _disabled: {
+    opacity: 1,
     color: 'brand.darkGray',
     borderColor: 'brand.darkGray',
     _dark: {
@@ -25,6 +26,7 @@ const baseStyle = defineStyle({
   _hover: {
     borderColor: 'brand.darkGreen',
     _disabled: {
+      opacity: 1,
       color: 'brand.darkGray',
       borderColor: 'brand.darkGray',
       _dark: {

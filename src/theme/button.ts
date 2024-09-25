@@ -8,10 +8,10 @@ const baseStyle = defineStyle({
 });
 
 const sizes = {
-  xs: defineStyle({ h: '24px', fontSize: '14px', px: '8px' }),
-  sm: defineStyle({ h: '32px', fontSize: '14px', px: '12px' }),
-  md: defineStyle({ h: '40px', fontSize: '18px', px: '16px' }),
-  lg: defineStyle({ h: '54px', fontSize: '20px', px: '24px' }),
+  xs: defineStyle({ h: '24px', fontSize: '8px', px: '28px' }),
+  sm: defineStyle({ h: '32px', fontSize: '12px', px: '32px' }),
+  md: defineStyle({ h: '40px', fontSize: '16px', px: '40px' }),
+  lg: defineStyle({ h: '54px', fontSize: '18px', px: '50px' }),
 };
 
 const disabledStyle = {
@@ -64,25 +64,28 @@ const secondary = defineStyle({
   },
 });
 
-const ghost = defineStyle({
+const text = defineStyle({
   ...baseStyle,
+  textDecor: 'underline',
+  bg: 'transparent',
   color: 'brand.darkGreen',
   _disabled: { color: 'brand.darkGray', opacity: 1 },
-  _hover: { bg: 'brand.gray' },
+  _hover: {
+    color: 'brand.green',
+    _disabled: { color: 'brand.darkGray', opacity: 1 },
+  },
   _dark: {
     color: 'brand.lightGraySecondary',
-    _disabled: { color: 'brand.darkGray', opacity: 1 },
+    _disabled: { color: 'brand.darkGray' },
     _hover: {
-      bg: 'brand.darkGreenSecondary',
-      color: 'brand.lightGraySecondary',
-      _disabled: { bg: 'transparent', color: 'brand.darkGray', opacity: 1 },
+      color: 'brand.green',
+      _disabled: { color: 'brand.darkGray' },
     },
   },
 });
 
-const text = defineStyle({
+const textSecondary = defineStyle({
   ...baseStyle,
-  textDecor: 'underline',
   bg: 'transparent',
   color: 'brand.darkGreen',
   _disabled: { color: 'brand.darkGray', opacity: 1 },
@@ -120,7 +123,7 @@ const destructive = defineStyle({
 const buttonTheme = defineStyleConfig({
   baseStyle,
   sizes,
-  variants: { primary, secondary, ghost, text, destructive },
+  variants: { primary, secondary, textSecondary, text, destructive },
   defaultProps: { size: 'md', variant: 'secondary' },
 });
 

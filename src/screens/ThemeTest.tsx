@@ -16,6 +16,7 @@ import {
   Text,
   useColorMode,
   Accordion,
+  Switch,
   AccordionButton,
   AccordionIcon,
   AccordionItem,
@@ -49,6 +50,7 @@ import {
   DrawerCloseButton,
   Textarea,
 } from '@chakra-ui/react';
+import { IconEye, IconEyePin } from '@tabler/icons-react';
 
 function ThemeTest(): JSX.Element {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -73,6 +75,7 @@ function ComponentAccordion(): JSX.Element {
     { title: 'Modal', content: <ModalTest /> },
     { title: 'Input', content: <Inputs /> },
     { title: 'Select', content: <Selects /> },
+    { title: 'Switch', content: <Switches /> },
     { title: 'Drawer', content: <DrawerTest /> },
   ];
 
@@ -90,6 +93,14 @@ function ComponentAccordion(): JSX.Element {
         </AccordionItem>
       ))}
     </Accordion>
+  );
+}
+
+function Switches(): JSX.Element {
+  return (
+    <Flex direction="row" gap={2} flexWrap="wrap">
+      <Switch />
+    </Flex>
   );
 }
 
@@ -117,7 +128,7 @@ function DrawerTest(): JSX.Element {
 
           <DrawerFooter>
             <Button mr={3}>Save</Button>
-            <Button variant="ghost" onClick={onClose}>
+            <Button variant="textSecondary" onClick={onClose}>
               Cancel
             </Button>
           </DrawerFooter>
@@ -151,6 +162,13 @@ function Inputs(): JSX.Element {
         <Input type="tel" placeholder="phone number" />
       </InputGroup>
 
+      <InputGroup>
+        <Input />
+        <InputRightElement>
+          <IconEye />
+        </InputRightElement>
+      </InputGroup>
+
       <Input isDisabled />
       <Input isDisabled placeholder="Here is a disabled placeholder" />
 
@@ -170,8 +188,8 @@ function Buttons(): JSX.Element {
   const variants = [
     'primary',
     'secondary',
-    'ghost',
     'text',
+    'textSecondary',
     'destructive',
   ] as const;
 
@@ -221,7 +239,7 @@ function ButtonSection({
 function Checkboxes(): JSX.Element {
   return (
     <Flex direction="row" gap={2} flexWrap="wrap">
-      <Checkbox>Normal</Checkbox>
+      <Checkbox variant="">Normal</Checkbox>
       <Checkbox isChecked>Checked</Checkbox>
       <Checkbox isDisabled>Disabled</Checkbox>
       <Checkbox isDisabled isChecked>
@@ -297,8 +315,8 @@ function ModalTest(): JSX.Element {
           <ModalFooter gap={3} px={8}>
             <Button variant="primary">Action primary</Button>
             <Button>Action default</Button>
-            <Button variant="ghost" onClick={onClose}>
-              Close ghost
+            <Button variant="textSecondary" onClick={onClose}>
+              Close textSecondary
             </Button>
           </ModalFooter>
         </ModalContent>

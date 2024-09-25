@@ -11,8 +11,9 @@ const baseStyle = definePartsStyle({
     boxShadow: '0px 4px 6px rgba(33, 37, 41, 0.2)',
     padding: 0,
     overflow: 'hidden',
+    border: 'none',
     _dark: {
-      background: 'brand.darkGreen',
+      background: 'brand.darkGreenSecondary',
     },
   },
   item: {
@@ -25,12 +26,12 @@ const baseStyle = definePartsStyle({
       background: 'brand.gray',
     },
     _dark: {
-      background: 'brand.darkGreen',
+      background: 'brand.darkGreenSecondary',
       _focus: {
         background: 'brand.darkGreenSecondary',
       },
       _hover: {
-        background: 'brand.darkGreenSecondary',
+        background: 'brand.darkGray',
       },
     },
   },
