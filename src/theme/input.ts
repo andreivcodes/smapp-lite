@@ -16,7 +16,8 @@ const baseStyle = definePartsStyle({
     },
   },
   element: {
-    p: 2.5,
+    pr: 4,
+    w: 8,
   },
   field: {
     borderRadius: 'full',

@@ -5,6 +5,7 @@ import buttonTheme from './theme/button';
 import cardTheme from './theme/card';
 import checkboxTheme from './theme/checkbox';
 import drawerTheme from './theme/drawer';
+import headingTheme from './theme/heading';
 import inputTheme from './theme/input';
 import menuTheme from './theme/menu';
 import modalTheme from './theme/modal';
@@ -12,6 +13,7 @@ import radioTheme from './theme/radio';
 import selectTheme from './theme/select';
 import switchTheme from './theme/switch';
 import tabsTheme from './theme/tabs';
+import textTheme from './theme/text';
 import textareaTheme from './theme/textarea';
 
 const config: ThemeConfig = {
@@ -54,6 +56,8 @@ const components = {
   Textarea: textareaTheme,
   Select: selectTheme,
   Switch: switchTheme,
+  Heading: headingTheme,
+  Text: textTheme,
 };
 const theme = extendTheme({ config, colors, components, styles });
 

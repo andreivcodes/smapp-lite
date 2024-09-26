@@ -1,32 +1,34 @@
-import React, { useState } from 'react';
-import { CheckIcon, ChevronDownIcon, ArrowDownIcon } from '@chakra-ui/icons';
+import { useState } from 'react';
+
+import { ArrowDownIcon, ChevronDownIcon } from '@chakra-ui/icons';
 import {
-  Button,
-  Checkbox,
-  Divider,
-  Flex,
-  Radio,
-  RadioGroup,
-  Stack,
-  Tab,
-  Tabs,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Text,
-  useColorMode,
   Accordion,
-  Switch,
   AccordionButton,
   AccordionIcon,
   AccordionItem,
   AccordionPanel,
   Box,
+  Button,
+  Checkbox,
+  Divider,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  Flex,
+  Heading,
+  Input,
+  InputGroup,
+  InputLeftAddon,
+  InputRightElement,
   Menu,
   MenuButton,
+  MenuDivider,
   MenuItem,
   MenuList,
-  MenuDivider,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -34,23 +36,22 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  useDisclosure,
-  Input,
-  InputGroup,
-  InputLeftAddon,
-  InputLeftElement,
-  InputRightElement,
+  Radio,
+  RadioGroup,
   Select,
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
+  Stack,
+  Switch,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Text,
   Textarea,
+  useColorMode,
+  useDisclosure,
 } from '@chakra-ui/react';
-import { IconEye, IconEyePin } from '@tabler/icons-react';
+import { IconEye } from '@tabler/icons-react';
 
 function ThemeTest(): JSX.Element {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -67,6 +68,7 @@ function ThemeTest(): JSX.Element {
 
 function ComponentAccordion(): JSX.Element {
   const components = [
+    { title: 'Texts', content: <Texts /> },
     { title: 'Buttons', content: <Buttons /> },
     { title: 'Checkboxes', content: <Checkboxes /> },
     { title: 'Radios', content: <Radios /> },
@@ -93,6 +95,20 @@ function ComponentAccordion(): JSX.Element {
         </AccordionItem>
       ))}
     </Accordion>
+  );
+}
+
+function Texts(): JSX.Element {
+  return (
+    <Flex direction="column" gap={2} flexWrap="wrap">
+      <Heading size="lg">Large heading</Heading>
+      <Heading size="md">Medium heading</Heading>
+      <Heading size="sm">Small heading</Heading>
+
+      <Text size="lg">Large text</Text>
+      <Text size="md">Medium text</Text>
+      <Text size="sm">Small text</Text>
+    </Flex>
   );
 }
 

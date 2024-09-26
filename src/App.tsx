@@ -10,6 +10,7 @@ import CreateWalletWrapper from './screens/createWallet/CreateWalletWrapper';
 import RecoverMnemonicScreen from './screens/createWallet/RecoverMnemonicScreen';
 import SetPasswordScreen from './screens/createWallet/SetPasswordScreen';
 import VerifyMnemonicScreen from './screens/createWallet/VerifyMnemonicScreen';
+import ThemeTest from './screens/ThemeTest';
 import UnlockScreen from './screens/UnlockScreen';
 // eslint-disable-next-line max-len
 import WalletScreen from './screens/WalletScreen';
@@ -19,7 +20,6 @@ import WelcomeWrapper from './screens/welcome/WelcomeWrapper';
 import useWallet from './store/useWallet';
 import Fonts from './theme/Fonts';
 import theme from './theme';
-import ThemeTest from './screens/ThemeTest';
 
 function App(): JSX.Element {
   const { hasWallet, isWalletUnlocked } = useWallet();
