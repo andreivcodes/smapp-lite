@@ -180,12 +180,12 @@ function Selects(): JSX.Element {
             value: 'option-one',
           },
           {
-            label: 'Option one',
-            value: 'option-one',
-          },
-          {
             label: 'Option two',
             value: 'option-two',
+          },
+          {
+            label: 'Option three',
+            value: 'option-three',
           },
         ]}
         chakraStyles={chakraStyles}
