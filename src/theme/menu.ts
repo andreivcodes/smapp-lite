@@ -25,13 +25,21 @@ const baseStyle = definePartsStyle({
     _hover: {
       background: 'brand.gray',
     },
+    _selected: {
+      background: 'brand.darkGreen',
+      color: 'brand.lightGraySecondary',
+    },
     _dark: {
       background: 'brand.darkGreenSecondary',
       _focus: {
-        background: 'brand.darkGreenSecondary',
+        background: 'brand.darkGray',
       },
       _hover: {
         background: 'brand.darkGray',
+      },
+      _selected: {
+        background: 'brand.gray',
+        color: 'brand.darkGreen',
       },
     },
   },

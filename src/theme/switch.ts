@@ -5,7 +5,7 @@ const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(
   switchAnatomy.keys
 );
 
-const baseStyle = defineStyle({
+const baseStyle = {
   thumb: {
     bg: 'white',
   },
@@ -15,7 +15,7 @@ const baseStyle = defineStyle({
       bg: 'linear-gradient(180deg, #3AFFA7 0%, #55E8E2 100%);',
     },
   },
-});
+};
 
 const switchTheme = defineMultiStyleConfig({
   baseStyle,

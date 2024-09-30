@@ -1,5 +1,6 @@
-import { useState } from 'react';
 import { ChakraStylesConfig, Select } from 'chakra-react-select';
+import { useState } from 'react';
+
 import { ArrowDownIcon, ChevronDownIcon } from '@chakra-ui/icons';
 import {
   Accordion,
@@ -61,7 +62,6 @@ function ThemeTest(): JSX.Element {
         Toggle {colorMode === 'light' ? 'Dark' : 'Light'} mode
       </Button>
       <ComponentAccordion />
-      <Selects />
     </Flex>
   );
 }
@@ -170,6 +170,7 @@ function Selects(): JSX.Element {
     <Flex direction="row" gap={2} flexWrap="wrap">
       <Select
         placeholder="Select option"
+        selectedOptionStyle="check"
         menuPortalTarget={document.body}
         styles={{
           menuPortal: (provided) => ({ ...provided, zIndex: 100 }),
@@ -186,6 +187,10 @@ function Selects(): JSX.Element {
           {
             label: 'Option three',
             value: 'option-three',
+          },
+          {
+            label: 'Option four',
+            value: 'option-four',
           },
         ]}
         chakraStyles={chakraStyles}
