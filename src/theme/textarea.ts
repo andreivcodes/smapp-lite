@@ -1,6 +1,7 @@
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
 
 const baseStyle = defineStyle({
+  resize: 'none',
   borderRadius: '8px',
   px: 4,
   borderWidth: '1px',

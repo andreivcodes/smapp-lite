@@ -8,13 +8,30 @@ const baseStyle = definePartsStyle({
   overlay: {
     bg: 'blackAlpha.600',
   },
-  dialogContainer: {
-    overflow: 'auto',
-    pt: 16,
-    pb: [6, 16],
+  header: {
+    paddingTop: '0px',
+    paddingBottom: '8px',
+    paddingRight: '0px',
+    paddingLeft: '0px',
+    textAlign: 'center',
   },
-  closeButton: {
-    borderRadius: 'full',
+  footer: {
+    paddingTop: '8px',
+    paddingBottom: '0px',
+    paddingRight: '0px',
+    paddingLeft: '0px',
+    paddingInlineStart: '0px',
+    paddingInlineEnd: '0px',
+    WebkitPaddingStart: '0px',
+    WebkitPaddingEnd: '0px',
+    justifyContent: 'center',
+  },
+  body: {
+    paddingTop: '0px',
+    paddingBottom: '8px',
+    paddingRight: '0px',
+    paddingLeft: '0px',
+    textAlign: 'center',
   },
   dialog: {
     paddingX: '30px',
@@ -29,6 +46,14 @@ const baseStyle = definePartsStyle({
       color: 'brand.lightGraySecondary',
       bg: 'brand.darkGreenSecondary',
     },
+  },
+  dialogContainer: {
+    overflow: 'auto',
+    pt: 16,
+    pb: [6, 16],
+  },
+  closeButton: {
+    borderRadius: 'full',
   },
 });
 

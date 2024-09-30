@@ -26,7 +26,7 @@ const baseStyle = definePartsStyle({
       background: 'white',
       color: 'brand.darkGreen',
       _focus: {
-        boxShadow: 'outline',
+        boxShadow: 'none',
       },
       _hover: {
         borderColor: 'brand.darkGreen',
@@ -34,7 +34,7 @@ const baseStyle = definePartsStyle({
       },
     },
     _focus: {
-      boxShadow: 'outline',
+      boxShadow: 'none',
     },
   },
 });

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { ChakraStylesConfig, Select } from 'chakra-react-select';
 import { ArrowDownIcon, ChevronDownIcon } from '@chakra-ui/icons';
 import {
   Accordion,
@@ -38,7 +38,6 @@ import {
   ModalOverlay,
   Radio,
   RadioGroup,
-  Select,
   Stack,
   Switch,
   Tab,
@@ -62,6 +61,7 @@ function ThemeTest(): JSX.Element {
         Toggle {colorMode === 'light' ? 'Dark' : 'Light'} mode
       </Button>
       <ComponentAccordion />
+      <Selects />
     </Flex>
   );
 }
@@ -155,15 +155,43 @@ function DrawerTest(): JSX.Element {
 }
 
 function Selects(): JSX.Element {
+  const chakraStyles: ChakraStylesConfig = {
+    inputContainer: (provided, state) => ({
+      ...provided,
+      minW: '200px',
+    }),
+    menuList: (provided, state) => ({
+      ...provided,
+      borderRadius: '10px',
+    }),
+  };
+
   return (
     <Flex direction="row" gap={2} flexWrap="wrap">
-      <Select placeholder="Select option">
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
-      </Select>
-      <Select icon={<ArrowDownIcon />} placeholder="Woohoo! A new icon" />
-      <Select placeholder="Disabled" isDisabled />
+      <Select
+        placeholder="Select option"
+        menuPortalTarget={document.body}
+        styles={{
+          menuPortal: (provided) => ({ ...provided, zIndex: 100 }),
+        }}
+        options={[
+          {
+            label: 'Option one',
+            value: 'option-one',
+          },
+          {
+            label: 'Option one',
+            value: 'option-one',
+          },
+          {
+            label: 'Option two',
+            value: 'option-two',
+          },
+        ]}
+        chakraStyles={chakraStyles}
+      />
+
+      <Select placeholder="Disabled" isDisabled chakraStyles={chakraStyles} />
     </Flex>
   );
 }
@@ -322,18 +350,17 @@ function ModalTest(): JSX.Element {
   return (
     <>
       <Button onClick={onOpen}>Open Modal</Button>
-      <Modal isOpen={isOpen} onClose={onClose} size="2xl">
+      <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+          <ModalHeader>Placeholder for header</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>Modal content goes here...</ModalBody>
+          <ModalBody>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </ModalBody>
           <ModalFooter gap={3} px={8}>
-            <Button variant="primary">Action primary</Button>
-            <Button>Action default</Button>
-            <Button variant="textSecondary" onClick={onClose}>
-              Close textSecondary
-            </Button>
+            <Button>Button</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
