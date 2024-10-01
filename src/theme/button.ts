@@ -8,10 +8,10 @@ const baseStyle = defineStyle({
 });
 
 const sizes = {
-  xs: defineStyle({ h: '24px', fontSize: '8px', minW: '120px' }),
-  sm: defineStyle({ h: '32px', fontSize: '12px', minW: '145px' }),
-  md: defineStyle({ h: '40px', fontSize: '16px', minW: '185px' }),
-  lg: defineStyle({ h: '54px', fontSize: '18px', minW: '235px' }),
+  xs: defineStyle({ h: '24px', fontSize: '8px', width: '120px' }),
+  sm: defineStyle({ h: '32px', fontSize: '12px', width: '145px' }),
+  md: defineStyle({ h: '40px', fontSize: '16px', width: '185px' }),
+  lg: defineStyle({ h: '54px', fontSize: '18px', width: '235px' }),
 };
 
 const disabledStyle = {
