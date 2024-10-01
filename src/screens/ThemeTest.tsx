@@ -164,6 +164,10 @@ function Selects(): JSX.Element {
       ...provided,
       borderRadius: '10px',
     }),
+    indicatorSeparator: (provided, state) => ({
+      ...provided,
+      display: 'none',
+    }),
   };
 
   return (
