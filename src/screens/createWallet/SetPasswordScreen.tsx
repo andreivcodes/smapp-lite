@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Form, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
@@ -37,6 +37,7 @@ function SetPasswordScreen(): JSX.Element {
   const ctx = useWalletCreation();
   const navigate = useNavigate();
   const { createWallet } = useWallet();
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     if (ctx.mnemonic.length === 0) {
@@ -44,13 +45,15 @@ function SetPasswordScreen(): JSX.Element {
     }
   }, [ctx.mnemonic, navigate]);
 
-  const onSubmit = handleSubmit((vals) => {
+  const onSubmit = handleSubmit(async (vals) => {
+    setSubmitted(true);
     ctx.setPassword(vals.password);
-    createWallet(vals.password, ctx.mnemonic);
+    await createWallet(vals.password, ctx.mnemonic);
     setValue('password', '');
     setValue('confirm', '');
     reset();
     navigate('/wallet');
+    setSubmitted(false);
   });
 
   return (
@@ -65,6 +68,10 @@ function SetPasswordScreen(): JSX.Element {
       <Box px={4} w={{ base: '100%', md: '90%' }} textAlign="center">
         <Text fontSize="xl" as="strong">
           Final step to access your wallet
+        </Text>
+        <Text fontSize="xs" mt={2} maxW={300} mx="auto">
+          Password should be at least 8 symbols long and contain uppercase and
+          lowercase letters, and&nbsp;numbers.
         </Text>
       </Box>
       <Box w="280px" mt={4}>
@@ -101,17 +108,9 @@ function SetPasswordScreen(): JSX.Element {
                     const hasUpperCase = /[A-Z]/.test(val);
                     const hasLowerCase = /[a-z]/.test(val);
                     const hasNumbers = /\d/.test(val);
-                    const hasNonalphas = /\W/.test(val);
-                    if (
-                      !(
-                        hasUpperCase &&
-                        hasLowerCase &&
-                        hasNumbers &&
-                        hasNonalphas
-                      )
-                    ) {
+                    if (!(hasUpperCase && hasLowerCase && hasNumbers)) {
                       // eslint-disable-next-line max-len
-                      return 'Password should contain symbols in upper and lower cases, numbers, and special characters';
+                      return 'Password should contain numbers and symbols in upper and lower cases.';
                     }
                     return undefined;
                   },
@@ -166,8 +165,9 @@ function SetPasswordScreen(): JSX.Element {
               variant="green"
               onClick={onSubmit}
               rightIcon={<IconArrowNarrowRight />}
+              isDisabled={submitted}
             >
-              Create wallet
+              {submitted ? 'Creating wallet...' : 'Create wallet'}
             </Button>
           </Flex>
         </Form>
